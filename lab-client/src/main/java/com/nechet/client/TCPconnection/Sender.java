@@ -30,11 +30,11 @@ public class Sender {
             }
         }
         sendCommand(request);
-        //try {
+        try {
             return (AnswerRequests) recieveObject();
-        //} catch (IOException | ClassNotFoundException e) {
-            //throw new SocketException();
-        //}
+        } catch (IOException | ClassNotFoundException e) {
+            throw new SocketException();
+        }
 
     }
 
