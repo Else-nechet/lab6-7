@@ -40,7 +40,7 @@ public class Client {
                         console.printLine("Для создания пользователя введите команду sign_up your_login your_password");
                         String line = console.read();
                         sign.executer(line);
-                    //} catch (CommandManagerException e) {
+                    } catch (CommandManagerException e) {
                         System.out.println("Нельзя выполнять команды кроме этих:");
                     } catch (ConsoleReadException e) {
                         throw new RuntimeException(e);
