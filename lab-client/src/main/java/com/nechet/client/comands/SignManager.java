@@ -63,16 +63,16 @@ public class SignManager {
                 Utils.setLogin(token[1]);
                 Utils.setPassword(token[2]);
             }
-        //}catch (WrongValuesOfCommandArgumentException e){
-            //throw new CommandManagerException("Не верное колличество аргументов: "+e.getMessage());
+        }catch (WrongValuesOfCommandArgumentException e){
+            throw new CommandManagerException("Не верное колличество аргументов: "+e.getMessage());
         }catch (UnknownCommandException e){
             throw new CommandManagerException(e.getMessage());
         }catch (NullPointerException e) {
             throw new CommandManagerException("Введена пустая строка");
         } catch (CreateObjectException e) {
             throw new CommandManagerException("Проблемы во время создания объекта: "+e.getMessage());
-        //} catch (SocketException e){
-            //throw new CommandManagerException("Сервер упал -\\__/-\n Выйдете и перезагрузитесь через время");
+        } catch (SocketException e){
+            throw new CommandManagerException("Сервер упал -\\__/-\n Выйдете и перезагрузитесь через время");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
